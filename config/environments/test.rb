@@ -36,12 +36,12 @@ Rails.application.configure do
   # Store uploaded files on the local file system in a temporary directory.
   config.active_storage.service = :test
 
-  config.action_mailer.perform_caching = false
-
+  # JBV - 20220614_0038 - Deactivated >> See at end of file
+  # config.action_mailer.perform_caching = false
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :test
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
@@ -57,4 +57,31 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  #########################################
+  #                                       #
+  #  REACT ESTATE Specific Configuration  #
+  #                                       #
+  #########################################
+
+  # JBV - 20220614_0016 - Will use Puma home page as a base for the mail sending (needed for Devise password recovery to work smoothly) 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # JBV - 20220614_0032 - Activating all needed features to effectively send mails (even from DEV)
+  config.action_mailer.raise_delivery_errors = true   # will effectively raise delivery errors
+  config.action_mailer.perform_caching = false        # Will NOT use fragment caching (detailed usefulness to be digged out)
+  config.action_mailer.delivery_method = :smtp        # Will use STMP as default mail sending protocol (see detailed confi below)
+  config.action_mailer.perform_deliveries = true      # Will ACTIVATE ACTUAL mail sending (setinng this to "false" will avoid any mail departure)
+
+  # JBV - 20220614_0034 -Adding all necessary SendGrid parameters to enable sending and receiving mails
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_LOGIN'],
+    :password => ENV['SENDGRID_PWD'],
+    :domain => 'monfauxnomdesite.fr',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 end

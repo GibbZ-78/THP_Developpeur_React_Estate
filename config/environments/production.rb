@@ -55,7 +55,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "react_estate_production"
 
-  config.action_mailer.perform_caching = false
+  # JBV - 20220614_0038 - Deactivated >> See at end of file
+  # config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -83,4 +84,31 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #########################################
+  #                                       #
+  #  REACT ESTATE Specific Configuration  #
+  #                                       #
+  #########################################
+
+  # JBV - 20220614_0016 - Will use Puma home page as a base for the mail sending (needed for Devise password recovery to work smoothly) 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # JBV - 20220614_0032 - Activating all needed features to effectively send mails (even from DEV)
+  config.action_mailer.raise_delivery_errors = true   # will effectively raise delivery errors
+  config.action_mailer.perform_caching = false        # Will NOT use fragment caching (detailed usefulness to be digged out)
+  config.action_mailer.delivery_method = :smtp        # Will use STMP as default mail sending protocol (see detailed confi below)
+  config.action_mailer.perform_deliveries = true      # Will ACTIVATE ACTUAL mail sending (setinng this to "false" will avoid any mail departure)
+
+  # JBV - 20220614_0034 -Adding all necessary SendGrid parameters to enable sending and receiving mails
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_LOGIN'],
+    :password => ENV['SENDGRID_PWD'],
+    :domain => 'monfauxnomdesite.fr',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 end
