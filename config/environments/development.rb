@@ -33,10 +33,10 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  # JBV - 20220614_0038 - Deactivated >> See at end of file
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.perform_caching = false
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -53,7 +53,6 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -63,6 +62,30 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # JBV - 20220613 - Mandatory line for Devise by-mail password recovery feature to work
+  #########################################
+  #                                       #
+  #  REACT ESTATE Specific Configuration  #
+  #                                       #
+  #########################################
+
+  # JBV - 20220614_0016 - Will use Puma home page as a base for the mail sending (needed for Devise password recovery to work smoothly) 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # JBV - 20220614_0032 - Activating all needed features to effectively send mails (even from DEV)
+  config.action_mailer.raise_delivery_errors = true   # will effectively raise delivery errors
+  config.action_mailer.perform_caching = false        # Will NOT use fragment caching (detailed usefulness to be digged out)
+  config.action_mailer.delivery_method = :smtp        # Will use STMP as default mail sending protocol (see detailed confi below)
+  config.action_mailer.perform_deliveries = true      # Will ACTIVATE ACTUAL mail sending (setinng this to "false" will avoid any mail departure)
+
+  # JBV - 20220614_0034 -Adding all necessary SendGrid parameters to enable sending and receiving mails
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_LOGIN'],
+    :password => ENV['SENDGRID_PWD'],
+    :domain => 'monfauxnomdesite.fr',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 end
