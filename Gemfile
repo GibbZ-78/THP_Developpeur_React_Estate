@@ -66,6 +66,9 @@ group :development, :test do
   # JBV - 20220613 - Adding '.env' file content management
   gem 'dotenv-rails'
 
+  # JBV - 20220614 - Adding nice console printing of complex DB objects
+  gem 'table_print'
+
 end
 
 group :development do
