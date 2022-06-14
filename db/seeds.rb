@@ -193,15 +193,15 @@ puts "  > Finished seeding DB with 'PrivateMessage' objects"
 
 puts "  > Starts seeding DB with 'Recommendation' objects"
 Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
-Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "What a f***ing estate investor: this dumb*** simply stole all my money!", author_id: 1, target_id: 7)
+Recommendation.create(content: "Easy transaction. Smooth exchanges. Good price. Thank you.", author_id: 2, target_id: 7)
+Recommendation.create(content: "Will gladly make business with you again! See you and thank you!", author_id: 3, target_id: 6)
+Recommendation.create(content: "Transaction was long, as was negociation but we finally came to an agreement. Thank you.", author_id: 4, target_id: 5)
+Recommendation.create(content: "I loooove to rip off ol' grand'mas! Thank you granny for selling me your castle for just a few bucks! Ha! Ha! Ha! (Machiavellian laugh)", author_id: 5, target_id: 4)
+Recommendation.create(content: "4th transaction I make on REACT ESTATE platform. Cannot be smoother. Thanks to the Mr. X, seller of this luxurious villa!", author_id: 6, target_id: 3)
+Recommendation.create(content: "The most seamless transaction ever: thank you Mrs. Y.", author_id: 7, target_id: 2)
+Recommendation.create(content: "Am so glad I bought this flat", author_id: 8, target_id: 2)
+Recommendation.create(content: "Transaction satisfactory.", author_id: 8, target_id: 1)
 Recommendation.all.each do |reco|
   puts "    - Recommendation ID: #{reco.id} - Content: #{reco.content} - Author: #{User.find(reco.author_id).email} - Target: #{User.find(reco.target_id).email}"
 end
