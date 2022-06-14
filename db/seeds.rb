@@ -82,25 +82,25 @@ puts "  > Finished seeding DB with the one and only 'Admin'"
 #################################
 #  id: integer                  #
 #  property_type_title: string  #
-#  property_type_descr: text    #
+#  property_type_desc: text    #
 #################################
 
 puts "  > Starts seeding DB with 'PropertyType' objects"
-PropertyType.create(property_type_title: "House", property_type_descr: "Detached and self-contained residence building with its own front door onto the street.")
-PropertyType.create(property_type_title: "Flat / Appartment", property_type_descr: "self-contained set of rooms within a shared building.")
-PropertyType.create(property_type_title: "Penthouse", property_type_descr: "Luxuriously fitted and spaceous flat / apartment on the top floor of a tall modern building")
-PropertyType.create(property_type_title: "Loft", property_type_descr: "Spaceous room or flat directly under the roof of a house or other building, converted and used for accommodation.")
-PropertyType.create(property_type_title: "Castle", property_type_descr: "Large building, typically of the medieval period, fortified against attack with thick walls, battlements, towers, and in many cases a moat.")
-PropertyType.create(property_type_title: "Parking spot", property_type_descr: "Place in a parking lot / car park to park one (motor) vehicule.")
-PropertyType.create(property_type_title: "Garage / Closed parking box", property_type_descr: "(Place in a) building for housing motor vehicles.")
-PropertyType.create(property_type_title: "Building plot", property_type_descr: "Piece of land on which a house or buidling can be built.")
-PropertyType.create(property_type_title: "Warehouse", property_type_descr: "Large building, often made of bricks and/or metal, where great quantities raw materials or manufactured goods may be stored prior to their distribution for sale.")
-PropertyType.create(property_type_title: "Manor", property_type_descr: "Large country house with lands, generally haunted if in Scotland.")
-PropertyType.create(property_type_title: "Villa", property_type_descr: "Stylish detached residence building.")
-PropertyType.create(property_type_title: "Tiny house", property_type_descr: "Minimalist residence building with much smaller square footage than the average home (i.e. 400 square feet and below), built with downsizing and sustainability in mind.")
-PropertyType.create(property_type_title: "Tree house", property_type_descr: "Basically, this is a cottage in the tree, suspended above void.")
+PropertyType.create(property_type_title: "House", property_type_desc: "Detached and self-contained residence building with its own front door onto the street.")
+PropertyType.create(property_type_title: "Flat / Appartment", property_type_desc: "self-contained set of rooms within a shared building.")
+PropertyType.create(property_type_title: "Penthouse", property_type_desc: "Luxuriously fitted and spaceous flat / apartment on the top floor of a tall modern building")
+PropertyType.create(property_type_title: "Loft", property_type_desc: "Spaceous room or flat directly under the roof of a house or other building, converted and used for accommodation.")
+PropertyType.create(property_type_title: "Castle", property_type_desc: "Large building, typically of the medieval period, fortified against attack with thick walls, battlements, towers, and in many cases a moat.")
+PropertyType.create(property_type_title: "Parking spot", property_type_desc: "Place in a parking lot / car park to park one (motor) vehicule.")
+PropertyType.create(property_type_title: "Garage / Closed parking box", property_type_desc: "(Place in a) building for housing motor vehicles.")
+PropertyType.create(property_type_title: "Building plot", property_type_desc: "Piece of land on which a house or buidling can be built.")
+PropertyType.create(property_type_title: "Warehouse", property_type_desc: "Large building, often made of bricks and/or metal, where great quantities raw materials or manufactured goods may be stored prior to their distribution for sale.")
+PropertyType.create(property_type_title: "Manor", property_type_desc: "Large country house with lands, generally haunted if in Scotland.")
+PropertyType.create(property_type_title: "Villa", property_type_desc: "Stylish detached residence building.")
+PropertyType.create(property_type_title: "Tiny house", property_type_desc: "Minimalist residence building with much smaller square footage than the average home (i.e. 400 square feet and below), built with downsizing and sustainability in mind.")
+PropertyType.create(property_type_title: "Tree house", property_type_desc: "Basically, this is a cottage in the tree, suspended above void.")
 PropertyType.all.each do |ptype|
-  puts "    - Property type ID: #{ptype.id} - Title: #{ptype.property_type_title} - Description: #{ptype.property_type_descr}"
+  puts "    - Property type ID: #{ptype.id} - Title: #{ptype.property_type_title} - Description: #{ptype.property_type_desc}"
 end
 puts "  > Finished seeding DB with 'PropertyType' objects"
 
