@@ -3,11 +3,11 @@
 #     REACT ESTATE     #
 #  Official seed file  #
 #                      #
-# THP Dev Winter 2022  #
+#  THP Dev Winter 2022 #
 #                      #
 ########################
 
-# Notice: requires the "faker" and "database_cleaner" gem to be part of the Rails environment
+# Notice: requires the "faker" and "database_cleaner" gems to be part of your Rails environment (ex. via Gemfile)
 
 # Erase the content of all tables, hence reseting the related "id" counters
 DatabaseCleaner.clean_with(:truncation)
@@ -23,6 +23,7 @@ DatabaseCleaner.clean_with(:truncation)
 puts
 puts "SEEDING - Creation of fake users"
 puts
+
 
 puts "  > Starts seeding 'Standard User' information"
 10.times do |x|
@@ -41,6 +42,7 @@ puts "  > Starts seeding 'Standard User' information"
   puts "  > [Limited version] User ID: #{User.last.id} - User mail: #{User.last.email} - User password (encrypted): #{User.last.encrypted_password}"
 end
 puts "  > Finished seeding 'Standard User'"
+
 
 ############################
 #                          #
@@ -66,6 +68,7 @@ User.create(password: "THP2022",
             email: "admin_react_estate@yopmail.com")
 puts "  > [Limited version] Admin ID: #{User.last.id} - Admin mail: #{User.last.email} - Admin password (encrypted): #{User.last.encrypted_password}"
 puts "  > Finished seeding the one and only 'Admin'"
+
 
 ################################
 #                              #
@@ -96,6 +99,7 @@ PropertyType.all.each do |ptype|
 end
 puts "  > Finished seeding 'PropertyTypes'"
 
+
 ############################
 #                          #
 #  CREATION OF PROPERTIES  #
@@ -109,20 +113,37 @@ puts "  > Finished seeding 'PropertyTypes'"
 #  user_id: integer           #
 ###############################
 
-puts "  > Starts seeding 'Properties'"
+puts "  > Starts seeding DB with 'Property' objects"
 Property.create(title: "Moulinsart", price: 12000000.0, description: "Famous home of Captain Haddock, Tintin, Snowy, and Thompson & Thomson.", property_type_id: 5, user_id: User.all.sample.id)
 Property.create(title: "Mortevielle", price: 3000000.0, description: "Main location of the wellknown intrigue game issued by Lankhor on Amstrad CPC 6128 in 1986.", property_type_id: 10, user_id: User.all.sample.id)
 Property.create(title: "Melleray", price: 299000.0, description: "Villa with a 5000 square meters landscaped garden.", property_type_id: 11, user_id: User.all.sample.id)
 Property.create(title: "GibbZ' Lair", price: 25.90, description: "GibbZ 'home sweet home' offering 4 bedrooms, 1 kitchen, 2 bathrooms, 1 dining, 1 living, and a skate middle-ramp in the garden.", property_type_id: 1, user_id: User.all.sample.id)
-Property.create(title: "Loïs' Hut", price: 9999999, description: "Loïs 'home sweet home' suspended tree house with 2 bedrooms, 1 kitchen, 1 bathroom, 1 dining, 1 living, 1 reading and study room, and an above-canopy lookout balcony.", property_type_id: 13, user_id: User.all.sample.id)
+Property.create(title: "Loïs' Hideout", price: 9999999, description: "Loïs 'home sweet home' suspended tree house with 2 bedrooms, 1 kitchen, 1 bathroom, 1 dining, 1 living, 1 reading and study room, and an above-canopy lookout balcony.", property_type_id: 13, user_id: User.all.sample.id)
 Property.create(title: "Damian' Sky Views", price: 9999999, description: "Damian 'home sweet home' benefitting from 12 double bedrooms, 6 single bedrooms, 4 kitchen (incl. one within the roof-top pool bar), 8 bathrooms, 3 dining, 3 living, a wine / spirit / cigar room, and an armored panic room.", property_type_id: 3, user_id: User.all.sample.id)
-
 Property.all.each do |prop|
   puts "    - Property ID: #{prop.id} - Title: #{prop.title} - Description: #{prop.description} - Type: #{PropertyType.find(prop.property_type_id).property_type_title} - Owner: #{User.find(prop.user_id).email}"
 end
+puts "  > Finished seeding BD with 'Property' objects"
 
 
-puts "  > Finished seeding 'Properties'"
+##################################
+#                                #
+#  CREATION OF PRIVATE MESSAGES  #
+#                                #
+##################################
+#  id: integer            #
+#  title: string          #
+#  content: text          #
+#  sender_id: integer     #
+#  recipient_id: integer  #
+###########################
+
+puts "  > Starts seeding DB with 'PrivateMessage' objects"
+PrivateMessage.create(content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3), 
+                      sender_id: ,
+                      recipient_id: )
+
+puts "  > Finished seeding DB with 'PrivateMessage' objects"
 
 puts
 puts "SEEDING - This is the end... At last !"
@@ -135,6 +156,6 @@ puts
 #     REACT ESTATE     #
 #  Official seed file  #
 #                      #
-# THP Dev Winter 2022  #
+#  THP Dev Winter 2022 #
 #                      #
 ########################
