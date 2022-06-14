@@ -175,7 +175,7 @@ PrivateMessage.create(content: Faker::Lorem.paragraph(sentence_count: 2, supplem
                       sender_id: 3,
                       recipient_id: 1)
 PrivateMessage.all.each do |pm|
-  puts "    - Message ID: #{pm.id} - Title: #{pm.title} - Description: #{pm.content} - Sender: #{User.find(pm.sender_id).email} - Recipient: #{User.find(pm.recipient_id).email}"
+  puts "    - Message ID: #{pm.id} - Title: #{pm.title} - Content: #{pm.content} - Sender: #{User.find(pm.sender_id).email} - Recipient: #{User.find(pm.recipient_id).email}"
 end
 puts "  > Finished seeding DB with 'PrivateMessage' objects"
 
@@ -192,9 +192,20 @@ puts "  > Finished seeding DB with 'PrivateMessage' objects"
 ###########################
 
 puts "  > Starts seeding DB with 'Recommendation' objects"
-PrivateMessage.create(content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 2), 
-                      sender_id: 1,
-                      recipient_id: 2)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.create(content: "The most seamless transaction ever: thanks!", author_id: 1, target_id: 8)
+Recommendation.all.each do |reco|
+  puts "    - Recommendation ID: #{reco.id} - Content: #{reco.content} - Author: #{User.find(reco.author_id).email} - Target: #{User.find(reco.target_id).email}"
+end
+puts "  > Finished seeding DB with 'Recommendation' objects"
 
 
 puts
