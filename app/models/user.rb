@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :properties
+  has_many :private_messages
+  has_many :recommendations
 
   validates :email, presence: true, uniqueness: true, length: { minimum: 3 }
 
