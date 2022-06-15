@@ -1,8 +1,9 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from '/components/Header/Header';
-import Main from '/components/Main/Main';
-import Footer from '/components/Main/Footer';
+import Header from './components/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
