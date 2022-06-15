@@ -1,13 +1,13 @@
 import React from 'react';
-import Hero from '/components/Hero/Hero'
-import PropertiesIndex from '/components/PropertiesIndex/PropertiesIndex'
+import Hero from '../Hero/Hero'
+import PropertiesIndex from '../PropertiesIndex/PropertiesIndex'
 import './Main.css'
 
 const Main = () => {
   return (
     <main>
-      <Hero/>
-      <PropertiesIndex/>
+      <Hero />
+      <PropertiesIndex />
     </main>
   );
 }
