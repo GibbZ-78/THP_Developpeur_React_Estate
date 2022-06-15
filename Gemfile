@@ -53,22 +53,24 @@ end
 ######################################
 
 # JBV - 20220613 - Adding e-mail + pwd authentication features
-gem 'devise'
+gem "devise"
 
 # JBV - 20220613 - Adding connexion to Sendgrid SMTP services (find out more config in the 'environments.rb' files)
-gem 'sendgrid-ruby'
+gem "sendgrid-ruby"
+
+#LK - 20220615 - Connect React to Rails API
+gem "rack-cors"
 
 group :development, :test do
 
   # JBV - 20220613 - Adding postgresql DB cleaning features (incl. IDs reset capabilities)
-  gem 'database_cleaner-active_record'
-  
+  gem "database_cleaner-active_record"
+
   # JBV - 20220613 - Adding '.env' file content management
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
 
   # JBV - 20220614 - Adding nice console printing of complex DB objects
-  gem 'table_print'
-
+  gem "table_print"
 end
 
 group :development do
@@ -78,7 +80,5 @@ group :development do
   gem "binding_of_caller"
 
   # JBV - 20220613 - Adding capability to generate fake though actual-looking data to fill postgresql DB via Rails models
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+  gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 end
-
