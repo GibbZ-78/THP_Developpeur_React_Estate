@@ -3,10 +3,10 @@ import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from '
 
 const Header = () => {
   return (
-    <div>
+    <header>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">React-Estate</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -23,7 +23,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </header>
   );
 }
 
