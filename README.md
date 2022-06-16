@@ -22,7 +22,7 @@ Things you may want to cover 📝
 
 
 * Ruby version
- 2.7.4  ©
+ 2.7.4  © best version ever
 
 
 * System dependencies
