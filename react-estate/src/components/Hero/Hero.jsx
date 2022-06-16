@@ -4,7 +4,7 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section>
-      <h2>This will soon be a hero banner... Sooner or later...</h2>
+      <h2>This will - sooner or later - become a noticeable hero banner... </h2>
     </section>
   );
 }

@@ -33,15 +33,16 @@
 
 # JBV - 20220615 - Moved and adapted content of Create-React-App .gitignore here below
 # React dependencies
+
 node_modules
 .pnp
 .pnp.js
 
 # React testing
-./react_estate/coverage
+./react_estate/coverage/
 
 # React production
-./react_estate/build
+./react_estate/build/
 
 # React misc
 .DS_Store
