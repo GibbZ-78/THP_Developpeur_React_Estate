@@ -23,10 +23,10 @@ const PropertyShow = () => {
   });
 
 
-  const myImagePath = `../../assets/images/${property.image_url}`;
+  let myImagePath = `../../assets/images/${property.image_url}`;
   console.log(`  > Property: ${property.title}`)
   console.log(`  > Path: ${myImagePath}`)
-  const myImage = require(myImagePath);
+  let myImage = require(myImagePath);
 
   return (
     <main>
