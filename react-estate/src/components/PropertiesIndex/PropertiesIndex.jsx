@@ -23,18 +23,18 @@ const PropertiesIndex = () => {
     <section>
       <Row xs={1} sm={2} md={3} lg={4} className="g-0 m-3">
       {properties.map(property =>
-                      <Col>
-                        <Card key={'card_'+property.id.toString()} border="light">
-                          <Card.Img variant="top" src={require("../../assets/images/"+property.image_url)} />
-                          <Card.Body>
-                            <Card.Title>{property.title}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted text-italic">{property.price}€ - {property.property_type_id} - {property.user_id}</Card.Subtitle>
-                            <Card.Text>{property.description.slice(0, 37) + '...'}</Card.Text>
-                            <Card.Link href={'/property/'+property.id.toString()}>More info...</Card.Link>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                      )
+        <Col key={'col_'+property.id.toString()}>
+          <Card key={'card_'+property.id.toString()} border="light">
+            <Card.Img variant="top" src={require("../../assets/images/"+property.image_url)} />
+            <Card.Body>
+              <Card.Title>{property.title}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted text-italic">{property.price}€ - {property.property_type_id} - {property.user_id}</Card.Subtitle>
+              <Card.Text>{property.description.slice(0, 37) + '...'}</Card.Text>
+              <Card.Link href={'/property/'+property.id.toString()}>More info...</Card.Link>
+            </Card.Body>
+          </Card>
+        </Col>
+        )
       }
       </Row>
     </section>
