@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import PropertyShow from './components/PropertyShow/PropertyShow';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 import NewProperty from './components/NewProperty/NewProperty';
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/addproperty" element={<NewProperty/>} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/login" element={<Lognin/>} />
+        <Route path="/login" element={<Login/>} />
         {/*        
         <Route path="/logout" element={<LogOut/>} />
         <Route path="/updateproperty/:propId" element={<UpdateProperty/>} />

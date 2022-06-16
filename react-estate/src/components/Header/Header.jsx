@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import About from '../About/About';
 import Contact from '../Contact/Contact';
-import { FaBuilding, FaHome, FaRegQuestionCircle, FaHouseUser, FaAt} from "react-icons/fa";
+import { FaBuilding, FaHome, FaRegQuestionCircle, FaHouseUser, FaAt, FaDoorOpen, FaFileSignature, FaDoorClosed} from "react-icons/fa";
 
 const Header = () => {
     return (
@@ -16,13 +16,12 @@ const Header = () => {
                             <Nav.Link href="/"><FaHome /> Home</Nav.Link>
                             <Nav.Link href="/about"><FaRegQuestionCircle /> About</Nav.Link>
                             <Nav.Link href="/contact"><FaAt /> Contact</Nav.Link>
-                            <Nav.Link href="#"><FaHouseUser /> Sign In</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Something</NavDropdown.Item>
+                            <FaHouseUser />
+                            <NavDropdown title="Connexion" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/login"><FaDoorOpen/> Log In</NavDropdown.Item>
+                                <NavDropdown.Item href="/signup"><FaFileSignature/> Sign Up</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#">Separated link</NavDropdown.Item>
+                                <NavDropdown.Item href="/logout"><FaDoorClosed/> Logout</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
