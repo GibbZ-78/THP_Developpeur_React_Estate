@@ -18,11 +18,11 @@ function App() {
         <Route path="/property/:propId" element={<PropertyShow/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/addproperty" element={<NewProperty/>} />
         {/*
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/logout" element={<LogOut/>} />
-        <Route path="/addproperty" element={<NewProperty/>} />
         <Route path="/updateproperty/:propId" element={<UpdateProperty/>} />
         <Route path="/deleteproperty/:propId" element={<DeleteProperty/>} />
         <Route path="/buyproperty/:propId" element={<BuyProperty/>} />
