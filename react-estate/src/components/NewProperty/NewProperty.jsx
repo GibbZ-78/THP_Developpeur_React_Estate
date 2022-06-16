@@ -5,14 +5,14 @@ import { Row, Col, Form, Button } from 'react-bootstrap';
 const myURL = "http://localhost:3000/properties/";
 const myMethod = "post";
 const myHeader = {'Content-Type': 'application/json'};
-const myOwner = 1;
+const myOwner = "1";
 
 const NewProperty = () => {
 
   const [myValidation, setMyValidation] = useState(false);
-  const [myTitle, setMyTitle] = useState("");
-  const [myPrice, setMyPrice] = useState(0.0);
-  const [myDescription, setMyDescription] = useState("");
+  const [myTitle, setMyTitle] = useState();
+  const [myPrice, setMyPrice] = useState();
+  const [myDescription, setMyDescription] = useState();
   const [myPropertyType, setMyPropertyType] = useState();
   const [myUser, setMyUser] = useState();
 
@@ -33,7 +33,7 @@ const NewProperty = () => {
     };
 
     fetch(myURL, { method: myMethod, headers: myHeader, body: JSON.stringify(myNewProperty) })
-    .then((response) => {return response.json()})
+    .then((response) => response.json())
     .then((jsonData) => console.log(jsonData))
     .catch(console.error);
 
@@ -48,16 +48,16 @@ const NewProperty = () => {
 
   return(
     <main>
-      <Form noValidate validated={myValidation} onsubmit={handleSubmit}>
+      <Form noValidate validated={myValidation} onSubmit={handleSubmit}>
         <Row>
           <Col>
-            <Form.Group className="mb-3 ms-5" controlId="newPropertyTitle">
+            <Form.Group className="mb-3 mx-5" controlId="newPropertyTitle">
               <Form.Label>Title</Form.Label>
               <Form.Control type="text" placeholder="Title of your RE ad" onChange={(e) => setMyTitle(e.target.value)} />
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className="mb-3 me-5" controlId="newPropertyPrice">
+            <Form.Group className="mb-3 mx-5" controlId="newPropertyPrice">
               <Form.Label>Price</Form.Label>
               <Form.Control type="text" placeholder="Price of your property" onChange={(e) => setMyPrice(e.target.value)} />
             </Form.Group>
@@ -65,13 +65,13 @@ const NewProperty = () => {
         </Row>
         <Row>
           <Col>
-            <Form.Group className="mb-3" controlId="newPropertyDescription">
+            <Form.Group className="mb-3 mx-5" controlId="newPropertyDescription">
               <Form.Label>Description</Form.Label>
               <Form.Control as="textarea" rows={3} onChange={(e) => setMyDescription(e.target.value)} />
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group className="mb-3" controlId="newPropertyType">
+            <Form.Group className="mb-3 mx-5" controlId="newPropertyType">
               <Form.Label>Property type</Form.Label>
               <Form.Select aria-label="Property type selection drop-down list" onChange={(e) => setMyPropertyType(e.target.value)}>
                 <option>Choose a property type</option>
@@ -93,17 +93,21 @@ const NewProperty = () => {
           </Col>
         </Row>
         <Row>
-        <Form.Group className="mb-3" controlId="newPropertyTermsConditions">
-          <Form.Check
-            required
-            label="I hereby agree to REACT ESTATE general terms and conditions"
-            feedback="You must agree before submitting each new property ad."
-            feedbackType="invalid"
-          />
-        </Form.Group>
+          <Col>
+            <Form.Group className="mb-3 ms-5" controlId="newPropertyTermsConditions">
+              <Form.Check
+                required
+                label="I hereby agree to REACT ESTATE general terms and conditions"
+                feedback="You must agree before submitting each new property ad."
+                feedbackType="invalid"
+              />
+            </Form.Group>
+          </Col>
         </Row>
         <Row>
-          <Button type="submit">Create property ad</Button>
+          <Col>
+            <Button type="submit">Create property ad</Button>
+          </Col>
         </Row>
       </Form>
     </main>
