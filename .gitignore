@@ -39,10 +39,10 @@ node_modules
 .pnp.js
 
 # React testing
-./react_estate/coverage/
+coverage
 
 # React production
-./react_estate/build/
+build
 
 # React misc
 .DS_Store
