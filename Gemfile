@@ -82,3 +82,5 @@ group :development do
   # JBV - 20220613 - Adding capability to generate fake though actual-looking data to fill postgresql DB via Rails models
   gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 end
+
+gem "devise-jwt", "~> 0.9.0"

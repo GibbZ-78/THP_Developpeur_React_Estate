@@ -10,6 +10,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+
 import NewProperty from './components/NewProperty/NewProperty';
 
 function App() {
