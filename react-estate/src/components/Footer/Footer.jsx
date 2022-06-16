@@ -70,7 +70,7 @@ const Footer = () => {
             </Link>
           </div>
           <small class="website-rights">
-            &copy; 2022 Damian, Jean-Baptiste & Loïs for REACT-ESTATE
+            &copy; 2022 Damian, Jean-Baptiste & Loïs
           </small>
           <div class="social-icons">
             <Link

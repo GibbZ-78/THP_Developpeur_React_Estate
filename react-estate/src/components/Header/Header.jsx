@@ -36,10 +36,7 @@ const Header = () => {
         <header className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                    <FaBuilding />
-                    <img alt='logo' src="https://i.imgur.com/LLxvYWN.png"
-                    />
-                    <i class='fab fa-typo3' />
+                    <img className="logo" alt='logo' src="https://i.imgur.com/LLxvYWN.png" />
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
