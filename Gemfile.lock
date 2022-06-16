@@ -122,7 +122,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.15.0)
+    minitest (5.16.0)
     msgpack (1.5.2)
     net-imap (0.2.3)
       digest
@@ -147,6 +147,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3.1)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.3)
@@ -185,6 +187,7 @@ GEM
     sendgrid-ruby (6.6.2)
       ruby_http_client (~> 3.4)
     strscan (3.0.3)
+    table_print (1.5.7)
     thor (1.2.1)
     timeout (0.3.0)
     tzinfo (2.0.4)
@@ -210,8 +213,10 @@ DEPENDENCIES
   faker!
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.3)
   sendgrid-ruby
+  table_print
   tzinfo-data
 
 RUBY VERSION
