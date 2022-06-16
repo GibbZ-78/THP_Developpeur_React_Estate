@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import PropertyShow from './components/PropertyShow/PropertyShow';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/property/:propId" element={<PropertyShow />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

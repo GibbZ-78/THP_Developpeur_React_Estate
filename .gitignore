@@ -33,8 +33,9 @@
 
 # JBV - 20220615 - Moved and adapted content of Create-React-App .gitignore here below
 # React dependencies
-/react_estate/node_modules/
-/react_estate/.pnp
+
+node_modules
+.pnp
 .pnp.js
 
 # React testing
