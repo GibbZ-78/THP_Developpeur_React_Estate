@@ -41,12 +41,6 @@ const Header = () => {
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
-                            <FaHome />
-                            Home
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
                         <Link
                             to='/about'
                             className='nav-links'
@@ -73,25 +67,17 @@ const Header = () => {
                             Add your ad
                         </Link>
                     </li>
-
-                    <li>
-                        <Link
-                            to='/sign'
-                            className='nav-links-mobile'
-                            onClick={closeMobileMenu}>
-                            <FaHouseUser />
-                            Sign Up
-                        </Link>
-                    </li>
-                    <FaHouseUser />
-                    <NavDropdown title="Connexion" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/login"><FaDoorOpen /> Log In</NavDropdown.Item>
-                        <NavDropdown.Item href="/signup"><FaFileSignature /> Sign Up</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="/logout"><FaDoorClosed /> Logout</NavDropdown.Item>
-                    </NavDropdown>
+                    <nav className="px-3" >
+                        <FaHouseUser />
+                        <NavDropdown title="Connexion" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/login"><FaDoorOpen /> Log In</NavDropdown.Item>
+                            <NavDropdown.Item href="/signup"><FaFileSignature /> Sign Up</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/logout"><FaDoorClosed /> Logout</NavDropdown.Item>
+                        </NavDropdown>
+                    </nav>
                 </ul>
-                {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+
             </div>
         </header>
     );
